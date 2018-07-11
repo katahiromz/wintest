@@ -7,7 +7,12 @@ DialogProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     switch (uMsg)
     {
     case WM_INITDIALOG:
-        MWindowBase::CenterWindowDx(hwnd);
+        {
+            TCHAR szText[32];
+            StringCchPrintf(szText, _countof(szText), TEXT("%p"), hwnd);
+            SetWindowText(hwnd, szText);
+            MWindowBase::CenterWindowDx(hwnd);
+        }
         break;
     case WM_COMMAND:
         EndDialog(hwnd, IDCANCEL);
