@@ -1,3 +1,4 @@
+// This file is public domain software.
 #include <windows.h>
 
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
