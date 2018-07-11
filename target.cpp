@@ -9,7 +9,7 @@ DialogProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     case WM_INITDIALOG:
         {
             TCHAR szText[32];
-            StringCchPrintf(szText, _countof(szText), TEXT("%p"), hwnd);
+            StringCchPrintf(szText, _countof(szText), TEXT("0x%p"), hwnd);
             SetWindowText(hwnd, szText);
             MWindowBase::CenterWindowDx(hwnd);
         }
@@ -50,7 +50,7 @@ public:
     void OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify)
     {
         TCHAR szText[32];
-        StringCchPrintf(szText, _countof(szText), TEXT("%p"), hwnd);
+        StringCchPrintf(szText, _countof(szText), TEXT("0x%p"), hwnd);
         SetWindowText(hwnd, szText);
 
         DialogBox(m_hInst, MAKEINTRESOURCE(1), hwnd, DialogProc);
