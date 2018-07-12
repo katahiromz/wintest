@@ -23,10 +23,10 @@ if (NOT uppercase_CMAKE_BUILD_TYPE MATCHES "^(DEBUG|RELEASE|RELWITHDEBINFO|MINSI
     message(FATAL_ERROR "Invalid value for CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 endif()
 
-# set output directory (build/)
-set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
-set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
-set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+## set output directory (build/)
+#set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
+#set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+#set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 # enable Win32 resource
 enable_language(RC)
@@ -60,6 +60,7 @@ endif()
 # executable
 add_executable(target WIN32 target.cpp target_res.rc)
 add_executable(minimize minimize.cpp)
+add_executable(resume resume.cpp)
 add_executable(isvisible isvisible.cpp)
 
 ##############################################################################

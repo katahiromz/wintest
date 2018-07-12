@@ -35,6 +35,11 @@ public:
     {
     }
 
+    virtual VOID ModifyWndClassDx(WNDCLASSEX& wcx)
+    {
+        wcx.style |= CS_DROPSHADOW;     // special flag
+    }
+
     BOOL OnCreate(HWND hwnd, LPCREATESTRUCT lpCreateStruct)
     {
         CenterWindowDx();
