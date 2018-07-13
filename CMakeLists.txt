@@ -59,8 +59,9 @@ endif()
 
 # executable
 add_executable(target WIN32 target.cpp target_res.rc)
+add_executable(isvisible isvisible.cpp)
 add_executable(minimize minimize.cpp)
 add_executable(resume resume.cpp)
-add_executable(isvisible isvisible.cpp)
+add_executable(switch-to switch-to.cpp)
 
 ##############################################################################
